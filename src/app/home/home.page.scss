@@ -1,27 +1,35 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.toolbar-gradient {
+  /* soft blue gradient header */
+  --background: linear-gradient(90deg, #4d7cff, #6ba6ff);
+  color: #fff;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.mt { margin-top: 14px; }
+
+.elev {
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  overflow: hidden;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.prompt-text {
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
-#container a {
-  text-decoration: none;
+.prompt-author {
+  opacity: .7;
+  margin-top: 8px;
+}
+
+.note-date {
+  font-weight: 600;
+}
+
+.note-line {
+  margin: 6px 0;
+}
+
+.muted {
+  opacity: .7;
 }

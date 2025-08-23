@@ -1,0 +1,8 @@
+ion-app {
+  height: 100%;
+}
+
+ion-router-outlet {
+  height: calc(100% - 56px); /* leave space for bottom tab bar */
+  display: block;
+}

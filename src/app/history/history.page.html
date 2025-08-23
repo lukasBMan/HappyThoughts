@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary" class="toolbar-gradient">
+    <ion-title>History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card *ngIf="!notes.length" class="elev" style="text-align:center; padding: 12px;">
+    <ion-card-content>
+      <p class="muted">No saved reflections yet. Create your first one on the Home tab.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list *ngIf="notes.length" class="elev">
+    <ion-list-header>All Reflections</ion-list-header>
+
+    <ion-item *ngFor="let n of notes">
+      <ion-label>
+        <h2 class="note-date">{{ n.date }}</h2>
+        <p class="note-line"><strong>Prompt:</strong> {{ n.prompt }}
+          <span *ngIf="n.author" class="muted">— {{ n.author }}</span>
+        </p>
+        <p><strong>Your reflection:</strong> {{ n.text }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
