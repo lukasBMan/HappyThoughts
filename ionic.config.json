@@ -1,0 +1,7 @@
+{
+  "name": "daily-prompt-journal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

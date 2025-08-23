@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Daily Prompt Journal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="getPrompt()">Get Prompt</ion-button>
+
+  <ion-card *ngIf="prompt">
+    <ion-card-header>
+      <ion-card-title>Prompt</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ prompt }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
