@@ -1,4 +1,8 @@
+<!-- home.page.html -->
+<!-- i used ionic components from here: https://ionicframework.com/docs/components -->
+
 <ion-header>
+  <!-- gradient style is in scss, looked up toolbar theming -->
   <ion-toolbar color="primary" class="toolbar-gradient">
     <ion-title>Mental Wellness Journal</ion-title>
   </ion-toolbar>
@@ -6,13 +10,15 @@
 
 <ion-content class="ion-padding">
 
-  <!-- Prompts -->
+  <!-- prompt button with tiny loading state -->
+  <!-- i copied ion-spinner usage from ionic docs -->
   <ion-button expand="block" color="secondary" (click)="getPrompt()" [disabled]="loading">
     <ion-spinner *ngIf="loading" name="dots" style="margin-right:8px;"></ion-spinner>
     <span *ngIf="!loading">🎲 New Wellness Prompt</span>
     <span *ngIf="loading">Loading…</span>
   </ion-button>
 
+  <!-- show prompt + author in a card -->
   <ion-card *ngIf="prompt" class="elev">
     <ion-card-header>
       <ion-card-title>Prompt</ion-card-title>
@@ -23,8 +29,9 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Journal entry -->
+  <!-- journal textarea -->
   <ion-item lines="full" class="mt elev">
+    <!-- auto-grow was from examples i saw -->
     <ion-textarea
       auto-grow="true"
       placeholder="Write your reflection…"
@@ -32,9 +39,11 @@
     </ion-textarea>
   </ion-item>
 
+  <!-- save button -->
   <ion-button expand="block" color="success" (click)="saveNote()">💾 Save Reflection</ion-button>
 
-  <!-- Daily reminder (Local Notifications) -->
+  <!-- reminder card (local notifications) -->
+  <!-- i followed capacitor local notifications guide for logic -->
   <ion-card class="mt elev">
     <ion-card-header>
       <ion-card-title>Daily Reminder</ion-card-title>
@@ -54,7 +63,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Saved reflections -->
+  <!-- saved notes with swipe delete -->
+  <!-- pattern copied from: https://ionicframework.com/docs/api/item-sliding -->
   <ion-list *ngIf="notes.length" class="mt elev">
     <ion-list-header>Recent Reflections (swipe left to delete)</ion-list-header>
 

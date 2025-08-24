@@ -1,3 +1,7 @@
+// history.page.ts
+// super small: just reads notes from preferences and displays them
+// i reused types so it stays consistent with home.page.ts
+
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
@@ -17,8 +21,8 @@ export class HistoryPage implements OnInit {
   private NOTES_KEY = 'notes';
 
   async ngOnInit() {
-    // Simple read-only view of stored notes
-    // (Capacitor Preferences Docs)
+    // simple load on init (read-only page)
+    // preferences doc i used: https://capacitorjs.com/docs/apis/preferences
     const stored = await Preferences.get({ key: this.NOTES_KEY });
     this.notes = stored.value ? JSON.parse(stored.value) : [];
   }

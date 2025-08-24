@@ -1,3 +1,7 @@
+// app.config.ts
+// i followed angular standalone setup here: https://angular.dev/guide/standalone-components
+// also used ionic docs to provide IonicModule globally: https://ionicframework.com/docs/angular/your-first-app
+
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
@@ -8,16 +12,15 @@ import { FormsModule } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // Router setup for standalone Angular
-    // (Angular Docs - Standalone APIs)
+    // router for tabs + pages
     provideRouter(routes),
 
-    // HttpClient for API requests
-    // (Angular Docs - HttpClient)
+    // http client for api calls (prompts)
+    // i used this guide: https://angular.io/guide/http
     provideHttpClient(),
 
-    // Minimal global providers for Ionic + common Angular modules
-    // (Ionic Docs - Standalone with IonicModule.forRoot())
+    // ionic + common angular modules (standalone style)
+    // i had a blank screen until i added IonicModule.forRoot()
     importProvidersFrom(
       IonicModule.forRoot(),
       CommonModule,

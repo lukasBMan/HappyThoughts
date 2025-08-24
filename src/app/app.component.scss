@@ -1,8 +1,16 @@
-ion-app {
-  height: 100%;
+/* app.component.scss */
+/* i wanted the tabs to look a bit cleaner, got the idea from ionic forum post */
+
+ion-tab-bar {
+  --background: #ffffff; /* keep it white for contrast */
+  border-top: 1px solid #e0e0e0; /* subtle divider */
 }
 
-ion-router-outlet {
-  height: calc(100% - 56px); /* leave space for bottom tab bar */
-  display: block;
+ion-tab-button {
+  --color: #888;
+  --color-selected: #4d7cff; /* matches my gradient header */
+}
+
+ion-icon {
+  font-size: 20px;
 }
